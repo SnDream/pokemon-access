@@ -10,6 +10,7 @@ langmap = {
 ["F"] = "fr",
 ["I"] = "it",
 ["S"] = "es",
+["C"] = "cn",
 }
 pathfind_hm_available = false
 pathfind_hm_all = false
@@ -803,6 +804,10 @@ init_script()
 
 memory.registerexec(0x100, init_script)
 memory.registerexec(0x8000000, init_script)
+
+if extra_hook ~= nil then
+	extra_hook()
+end
 
 while true do
 emu.frameadvance()
