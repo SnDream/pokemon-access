@@ -289,14 +289,16 @@ end
 function get_custom_name(name_offset)
     local name = ""
     local i = 0
-    local charh = 0
+    local charh = -1
     local char = memory.readbyte(name_offset + i)
     while char ~= CHAR_NAME_END do
-        if char <= 0x2e then
+        if char <= 0x2e and charh == -1 then
             charh = char
-        else
+        elseif charh ~= -1 then
             name = name .. translate(char + SHIFT(charh, -8))
-            charh = 0
+            charh = -1
+        else
+            name = name .. translate(char)
         end
         i = i + 1
         char = memory.readbyte(name_offset + i)
