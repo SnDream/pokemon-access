@@ -55,8 +55,9 @@ strings = {
 ["keyboard_ok"] = "OK",
 ["thin_ice"] = "很薄的冰",
 ["cracked_ice"] = "碎裂的冰",
-["boulder_switch"] = "巨石开关",
+["switch"] = "开关",
 ["not_in_battle"] = "不在对战中",
 ["power"] = "力量",
 ["accuracy"] = "命中",
+["hole"] = "孔洞",
 }
